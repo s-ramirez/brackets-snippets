@@ -161,7 +161,7 @@
                 ${4}
             }
             
-            ${2:Ctrl}.$inject = [];
+            ${2:Ctrl}.$inject = ['${3:dependencies}'];
             
             angular
                 .module('${1:module}')
@@ -187,7 +187,7 @@
                 }
             }
             
-            ${2:directive}.$inject = [];
+            ${2:directive}.$inject = ['${3:dependencies}'];
             
             angular
                 .module('${1:module}')
@@ -211,6 +211,8 @@
                 function ${4:function}() {
                 }
             }
+            
+            ${2:Factory}.$inject = ['${3:dependencies}'];
             angular
                 .module('${1:module}')
                 .factory('${2:factory}', ${2:factory});
