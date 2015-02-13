@@ -81,24 +81,17 @@
             ga('send', 'pageview');
         </script>
 
-- trigger: img
+- trigger: placeholder
   scope: html
   description: Dummy Image
   text: |
-        <img src="http://dummyimage.com/${1:800}x${2:600}/4d494d/686a82.gif&text=${3:placeholder+image}" alt="${3:placeholder+image}">${4}
+        <img src="http://placehold.it/${1:800}x${2:600}"/>${3}
 
 - trigger: link
   scope: html
   description: Link Tag
   text: |
         <link rel="stylesheet" type="text/css" href="${1}">${2}
-
-- trigger: jquery
-  scope: html
-  description: jQuery Tag
-  text: |
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
 - trigger: lorem
   scope: html
@@ -126,239 +119,7 @@
         <!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-
-# ---
-# CSS
-# From: https://github.com/joshnh/CSS-Snippets
-# ---
-- trigger: ani
-  scope: css
-  description: Animation
-  text: |
-        -webkit-animation: ${1:name} ${2:duration};
-        animation: ${1:name} ${2:duration};${3}
-
-- trigger: aft
-  scope: css
-  description: After
-  text: |
-        ${1}:after {
-            content: '';
-            ${2}
-        }
-
-- trigger: box
-  scope: css
-  description: Box Shadow
-  text: |
-        box-shadow: ${1:horizontal}px ${2:vertical}px ${3:blur-radius}px ${4:spread-distance}px ${5:#eee};${6}
-
-# From http://codepen.io/HugoGiraudel/pen/LklCv
-- trigger: flex
-  scope: css
-  description: Flexbox
-  text: |
-        .flex-container {
-          display: -webkit-box;
-          display: -moz-box;
-          display: -ms-flexbox;
-          display: -webkit-flex;
-          display: flex;
-
-          -webkit-flex-flow: row wrap;
-          justify-content: space-around;
-        }
-
-        .flex-item {
-          flex: 1;
-          background: tomato;
-          padding: 50px;
-          margin: 5px;
-          color: white;
-          text-align: center;
-        }
-
-- trigger: ff
-  scope: css
-  description: Font Family
-  text: |
-        font-family: Helvetica, Arial, sans-serif;
-
-- trigger: h
-  scope: css
-  description: HSLA
-  text: |
-        hsla(${1:0},${2:0}%,${3:0}%,${4:1})${5}
-
-- trigger: key
-  scope: css
-  description: KeyFrames
-  text: |
-        @-webkit-keyframes ${1:name} {
-            0% {
-              ${2:-webkit-transform: translate3d(0, 0, 0);}
-            }
-            100% {
-              ${3:-webkit-transform: translate3d(0, 0, 0);}
-            }
-        }
-        @keyframes ${1:name} {
-            0% {
-              ${2:transform: translate3d(0, 0, 0);}
-            }
-            100% {
-              ${3:transform: translate3d(0, 0, 0);}
-            }
-        }${4}
-
-- trigger: med
-  scope: css
-  description: Media
-  text: |
-        @media (min-width: ${1}) {
-          ${2}
-        }${3}
-
-- trigger: r
-  scope: css
-  description: RGBA
-  text: |
-        rgba(${1:0},${2:0},${3:0},${4:1})${5}
-
-- trigger: tex
-  scope: css
-  description: Text Shadow
-  text: |
-        text-shadow: ${1:horizontal}px ${2:vertical}px ${3:blur-radius}px ${4:#eee};${5}
-
-- trigger: upp
-  scope: css
-  description: Upper Case
-  text: |
-        text-transform: uppercase;
-
-- trigger: wra
-  scope: css
-  description: Word Wrap
-  text: |
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-
-
-# ---
-# Javascript: Console
-# From: https://github.com/zenorocha/sublime-javascript-snippets
-# ---
-- trigger: cl
-  scope: javascript
-  description: console.log
-  tag: VanillaJS
-  text: |
-        console.log(${1:obj});${2}
-
-- trigger: cd
-  scope: javascript
-  description: console.dir
-  tag: VanillaJS
-  text: |
-        console.dir(${1:obj});${2}
-
-- trigger: ce
-  scope: javascript
-  description: console.error
-  tag: VanillaJS
-  text: |
-        console.error(${1:obj});${2}
-
-- trigger: cll
-  scope: javascript
-  description: console.log
-  tag: VanillaJS
-  text: |
-        console.log('${1:obj}:', ${1:obj});${2}
-
-- trigger: cdd
-  scope: javascript
-  description: console.dir
-  tag: VanillaJS
-  text: |
-       console.dir('${1:obj}:', ${1:obj});${2}
-
-- trigger: cee
-  scope: javascript
-  description: console.error
-  tag: VanillaJS
-  text: |
-        console.error('${1:obj}:', ${1:obj});${2}
-
-# ---
-# Javascript: DOM
-# ---
-- trigger: ae
-  scope: javascript
-  description: document.addEventListener
-  tag: VanillaJS
-  text: |
-        ${1:document}.addEventListener('${2:event}', function(e) {
-          ${3}
-        });${4}
-
-- trigger: ac
-  scope: javascript
-  description: document.appendChild
-  tag: VanillaJS
-  text: |
-        ${1:document}.appendChild(${2:elem});${3}
-
-- trigger: rc
-  scope: javascript
-  description: document.removeChild
-  tag: VanillaJS
-  text: |
-        ${1:document}.removeChild(${2:elem});${3}
-
-- trigger: cel
-  scope: javascript
-  description: document.createElement
-  tag: VanillaJS
-  text: |
-        ${1:document}.createElement(${2:elem});${3}
-
-- trigger: gi
-  scope: javascript
-  description: document.getElementById
-  tag: VanillaJS
-  text: |
-        ${1:document}.getElementById('${2:id}');${3}
-
-- trigger: gc
-  scope: javascript
-  description: document.getElementsByClassName
-  tag: VanillaJS
-  text: |
-        ${1:document}.getElementsByClassName('${2:class}');${3}
-
-- trigger: gt
-  scope: javascript
-  description: document.getElementsByTagName
-  tag: VanillaJS
-  text: |
-        ${1:document}.getElementsByTagName('${2:tag}');${3}
-
-- trigger: qs
-  scope: javascript
-  description: document.querySelector
-  tag: VanillaJS
-  text: |
-        ${1:document}.querySelector('${2:selector}');${3}
-
-- trigger: qsa
-  scope: javascript
-  description: document.querySelectorAll
-  tag: VanillaJS
-  text: |
-        ${1:document}.querySelectorAll('${2:selector}');${3}
-
+        
 # ---
 # Javascript: Loop
 # ---
@@ -381,147 +142,76 @@
             ${3}
           }
         }${4}
-
-# ---
-# Javascript: Function
-# ---
-- trigger: fn
-  scope: javascript
-  description: function
-  tag: VanillaJS
-  text: |
-        function ${1:methodName} (${2:arguments}) {
-          ${3}
-        }${4}
-
-- trigger: afn
-  scope: javascript
-  description: anonymous function
-  tag: VanillaJS
-  text: |
-        function (${1:arguments}) {
-          ${2}
-        }${3}
-
-- trigger: pr
-  scope: javascript
-  description: prototype
-  tag: VanillaJS
-  text: |
-        ${1:ClassName}.prototype.${2:methodName} = function (${3:arguments}) {
-          ${4}
-        };${5}
-
-# ---
-# Javascript: Timer
-# ---
-- trigger: si
-  scope: javascript
-  description: setInterval
-  tag: VanillaJS
-  text: |
-        setInterval(function() {
-          ${2}
-        }, ${1:delay});${3}
-
-- trigger: st
-  scope: javascript
-  description: setTimeout
-  tag: VanillaJS
-  text: |
-        setTimeout(function() {
-          ${2}
-        }, ${1:delay});${3}
-
+        
 # ---
 # AngularJS
 # From: myself
 # ---
-- trigger: config
-  scope: javascript
-  description: Config
-  tag: AngularJS
-  text: |
-        config(function (${1:$stateProvider}) {
-          ${2}
-        })${3}
 
-- trigger: controller
+- trigger: ngcontroller
   scope: javascript
   description: Controller
   tag: AngularJS
   text: |
-        controller('${1:name}', function (${2:$scope}) {
-          ${3}
-        })${4}
-
-- trigger: directive
+        (function() {
+            'use strict';
+            
+            function ${2:Ctrl}(${3:dependencies}) {
+                var vm = this;
+                ${4}
+            }
+            
+            ${2:Ctrl}.$inject = [];
+            
+            angular
+                .module('${1:module}')
+                .controller('${2:Ctrl}', ${2:Ctrl});
+        })();
+        
+- trigger: ngdirective
   scope: javascript
   description: Directive
   tag: AngularJS
   text: |
-        directive('${1:name}', function () {
-          return {
-            templateUrl: '${2:view/foo.html}',
-            restrict: '${3:A}',
-            scope: {
-            },
-            link: function postLink (${4:$scope, elem, attrs}) {
-              ${5}
-            }
-          }
-        })${6}
+        (function() {
+            'use strict';
+            
+            function ${2:directive} (${3:dependencies}) {
+                var directive = {
+                    link: link,
+                    restrict: 'A'
+                };
+                return directive;
 
-- trigger: factory
+                function link(scope, element, attrs) {
+                }
+            }
+            
+            ${2:directive}.$inject = [];
+            
+            angular
+                .module('${1:module}')
+                .directive('${2:directive}', ${2:directive});
+        })();
+
+- trigger: ngfactory
   scope: javascript
   description: Factory
   tag: AngularJS
   text: |
-        factory('${1:name}', function (${2}) {
-          ${3}
-          return null;
-        })${4}
+        (function() {
+            'use strict';
 
-- trigger: filter
-  scope: javascript
-  description: Filter
-  tag: AngularJS
-  text: |
-        filter(${1:name}, function(){
-          return function(input){
-            ${2}
-            return input;
-          };
-        })${3}
+            function ${2:Factory}(${3:dependencies}) {
+                var service = {
+                    ${4:func}: ${4:func}
+                };
+                return service;
 
-- trigger: provider
-  scope: javascript
-  description: Provider
-  tag: AngularJS
-  text: |
-        provider('${1:name}', function () {
-          ${2}
-
-          this.$get = function () {
-            return null;
-          };
-        })${3}
-
-- trigger: run
-  scope: javascript
-  description: Run
-  tag: AngularJS
-  text: |
-        run(${1:$rootScope}, function () {
-          ${2}
-        })${3}
-
-- trigger: service
-  scope: javascript
-  description: Service
-  tag: AngularJS
-  text: |
-        service('${1:name}', function (${2}) {
-          ${3}
-          return null;
-        })${4}
+                function ${4:function}() {
+                }
+            }
+            angular
+                .module('${1:module}')
+                .factory('${2:factory}', ${2:factory});
+        })();
